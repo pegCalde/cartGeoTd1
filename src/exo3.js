@@ -4,7 +4,7 @@ if (window.DeviceOrientationEvent) {
     "<h2>impossible de détecter l'orientation de l'appareil, le navigateur ne supporte pas cet évènement.</h2>";
 }
 
-function process(event) {
+function processOrientation(event) {
     var alpha = event.alpha; //angle de rotation (en degrés) autour de l’axe Z
     var beta = event.beta; //angle d’inclinaison (en degrés) autour de l’axe X
     var gamma = event.gamma; //angle d’inclinaison (en degrés) autour de l’axe Y
@@ -19,7 +19,7 @@ if (window.DeviceMotionEvent) {
     "<h2>impossible de détecter le mouvement de l'appareil, le navigateur ne supporte pas cet évènement.</h2>";
 }
 
-function process(event) {
+function processMotion(event) {
     var x = event.accelerationIncludingGravity.x;
     var y = event.accelerationIncludingGravity.y;
     var z = event.accelerationIncludingGravity.z;
