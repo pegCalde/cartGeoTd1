@@ -1,17 +1,18 @@
 function getMyPosition(position) {
-    var infoPos = "Position : <br>";
-    infoPos += "Latitude : " + position.coords.latitude + "\n";
-    infoPos += "Longitude: " + position.coords.longitude + "\n";
-    infoPos += "Altitude : " + position.coords.altitude + "\n";
+    var infoPos = "Position actuelle: <br>";
+    infoPos += "Latitude: " + position.coords.latitude + "<br>";
+    infoPos += "Longitude: " + position.coords.longitude + "<br>";
+    infoPos += "Altitude: " + position.coords.altitude + "<br>";
+    infoPos += "Vitesse : "+position.coords.speed +"<br>";
     document.getElementById("infoPos").innerHTML = infoPos;
 }
 
 function watchMyPosition(position) {
-    var infoPos = "Position : <br>";
-    infoPos += "Latitude : "+position.coords.latitude +"\n";
-    infoPos += "Longitude: "+position.coords.longitude+"\n";
-    infoPos += "Altitude : "+position.coords.altitude +"\n";
-    infoPos += "Vitesse  : "+position.coords.speed +"\n";
+    var infoPos = "Position actuelle: <br>";
+    infoPos += "Latitude: "+position.coords.latitude +"<br>";
+    infoPos += "Longitude: "+position.coords.longitude+"<br>";
+    infoPos += "Altitude: "+position.coords.altitude +"<br>";
+    infoPos += "Vitesse : "+position.coords.speed +"<br>";
     document.getElementById("infoPos").innerHTML = infoPos;
 }
 
@@ -21,6 +22,3 @@ if (navigator.geolocation) {
 
 var watchId = navigator.geolocation.watchPosition(watchMyPosition);
 navigator.geolocation.clearWatch(watchId);
-
-//navigator.geolocation.getCurrentPosition(getMyPosition,{maximumAge:600000, enableHighAccuracy:true});
-
