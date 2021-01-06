@@ -1,5 +1,5 @@
 if (window.DeviceOrientationEvent) {
-    window.addEventListener("deviceOrientation", process, false);
+    window.addEventListener("deviceorientation", process, false);
 } else {
     "<h2>impossible de détecter l'orientation de l'appareil, le navigateur ne supporte pas cet évènement.</h2>";
 }
