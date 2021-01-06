@@ -3,9 +3,12 @@ body {
 }
 
 .centerContent{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.centrer{
+    text-align: center;
 }
 
 .topnav {
