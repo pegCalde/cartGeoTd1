@@ -1,5 +1,5 @@
 function getMyPosition(position) {
-    var infoPos = "Position :\n";
+    var infoPos = "Position : <br>";
     infoPos += "Latitude : " + position.coords.latitude + "\n";
     infoPos += "Longitude: " + position.coords.longitude + "\n";
     infoPos += "Altitude : " + position.coords.altitude + "\n";
