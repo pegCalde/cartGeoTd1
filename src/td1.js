@@ -1,46 +1,37 @@
-var watchPos, currentPos, target;
-
-var options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
+// Position par défaut
+var defaultPos = new google.maps.LatLng(48.579400,7.7519);
+// Options de la carte
+var optionsGmaps = {
+    center:defaultPos,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    zoom: 15
 };
+// Initialisation de la carte pour l'élément portant l'id "map"
+var map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
+var stock-lat-long;
 
-function success(pos) {
-    var crd = pos.coords;
-
-    console.log('Votre position actuelle est :');
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude : ${crd.longitude}`);
-    console.log(`La précision est de ${crd.accuracy} mètres.`);
+function getMyPosition(position) {
+    var infoPos = "Position :\n";
+    infoPos += "Latitude : " + position.coords.latitude + "\n";
+    infoPos += "Longitude: " + position.coords.longitude + "\n";
+    infoPos += "Altitude : " + position.coords.altitude + "\n";
+    document.getElementById("infoPos").innerHTML = infoPos;
 }
 
-function error(err) {
-    console.warn(`error (${err.code}): ${err.message}`);
+function watchMyPosition(position) {
+    var infoPos = "Position déterminée :\n";
+    infoPos += "Latitude : "+position.coords.latitude +"\n";
+    infoPos += "Longitude: "+position.coords.longitude+"\n";
+    infoPos += "Altitude : "+position.coords.altitude +"\n";
+    infoPos += "Vitesse  : "+position.coords.speed +"\n";
+    document.getElementById("infoPos").innerHTML = infoPos;
 }
 
-function successWatchPosition(pos) {
-    var crd = pos.coords;
-
-    if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
-        console.log('it works');
-        navigator.geolocation.clearWatch(id);
-    }
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getMyPosition);
 }
 
-target = {
-    latitude: 0,
-    longitude: 0
-};
+var watchId = navigator.geolocation.watchPosition(watchMyPosition);
 
-optionsF = {
-    enableHighAccuracy: false,
-    timeout: 5000,
-    maximumAge: 0
-};
+navigator.geolocation.getCurrentPosition(maPosition, erreurPosition,{maximumAge:600000, enableHighAccuracy:true});
 
-watchPos = navigator.geolocation.watchPosition(successWatchPosition, error, optionsF);
-currentPos = navigator.geolocation.getCurrentPosition(success, error, options);
-
-console.log(currentPos);
-console.log(watchPos);
