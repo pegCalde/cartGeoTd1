@@ -8,7 +8,7 @@ var optionsGmaps = {
 };
 // Initialisation de la carte pour l'élément portant l'id "map"
 var map = new google.maps.Map(document.getElementById("map"), optionsGmaps);
-var stock-lat-long;
+var stockLatLong;
 
 function getMyPosition(position) {
     var infoPos = "Position :\n";
