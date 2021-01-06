@@ -1,9 +1,8 @@
-//timestamp
-var options = {
+/*var options = {
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0
-};
+};*/
 
 function getMyPosition(position) {
     var infoPos = "Position actuelle: <br>";
@@ -25,10 +24,10 @@ function watchMyPosition(position) {
 }
 
 if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getMyPosition, options);
+    navigator.geolocation.getCurrentPosition(getMyPosition);
 } else {
     "<h2>La géolocalisation n'est pas possible</h2>";
 }
 
-var watchId = navigator.geolocation.watchPosition(watchMyPosition, options);
+var watchId = navigator.geolocation.watchPosition(watchMyPosition);
 navigator.geolocation.clearWatch(watchId);
