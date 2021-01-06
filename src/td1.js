@@ -7,7 +7,7 @@ function getMyPosition(position) {
 }
 
 function watchMyPosition(position) {
-    var infoPos = "Position :\n";
+    var infoPos = "Position :\r\n";
     infoPos += "Latitude : "+position.coords.latitude +"\n";
     infoPos += "Longitude: "+position.coords.longitude+"\n";
     infoPos += "Altitude : "+position.coords.altitude +"\n";
@@ -20,6 +20,7 @@ if (navigator.geolocation) {
 }
 
 var watchId = navigator.geolocation.watchPosition(watchMyPosition);
+navigator.geolocation.clearWatch(watchId);
 
 navigator.geolocation.getCurrentPosition(getMyPosition,{maximumAge:600000, enableHighAccuracy:true});
 
