@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/exo4.css" />
 </head>
+
 <body>
     <header>
         <div class="topnav">
@@ -21,7 +23,17 @@
         <button id="showPos">afficher la position</button>
         <div id="pos"></div>
         <button id="showTypeEvent">afficher le type d'event</button>
+        <div id="event"></div>
     </div>
+
+    <canvas id="canvas" width="200" height="200" style="border:solid black 1px;">
+        Your browser does not support canvas element.
+    </canvas>
+    <br>
+    Log:
+    <pre id="log" style="border: 1px solid blue;"></pre>
+
     <script type="text/javascript" src="../js/exo4.js"></script>
 </body>
+
 </html>

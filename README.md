@@ -13,7 +13,7 @@ afficher les informations de position
 afficher l'orientation et le mouvement du mobile
 
 ## exercice 4
-mettre en place le touche event sur mobile
+mettre en place le touch event sur mobile
  - affichez la position au click sur bouton
  - affichez le type d’event reçu
 faire pareil sur les 2 autres exercices
