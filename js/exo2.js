@@ -5,12 +5,12 @@
 };*/
 
 function getMyPosition(position) {
-    var infoPos = "Position actuelle: <br>";
-    infoPos += "Latitude: " + position.coords.latitude + "<br>";
-    infoPos += "Longitude: " + position.coords.longitude + "<br>";
-    infoPos += "Altitude: " + position.coords.altitude + "<br>";
-    infoPos += "Vitesse : "+ position.coords.speed + "<br>";
-    infoPos += "Date: " + new Date(position.timestamp);
+    var infoPos = "<strong>Position actuelle: </strong><br><br>";
+    infoPos += "<strong>Latitude: </strong>Latitude: " + position.coords.latitude + "<br>";
+    infoPos += "<strong>Longitude: </strong>" + position.coords.longitude + "<br>";
+    infoPos += "<strong>Altitude: </strong>" + position.coords.altitude + "<br>";
+    infoPos += "<strong>Vitesse : </strong>"+ position.coords.speed + "<br>";
+    infoPos += "<strong>Date: </strong>" + new Date(position.timestamp);
     document.getElementById("infoPos").innerHTML = infoPos;
 }
 

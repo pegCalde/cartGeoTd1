@@ -7,8 +7,33 @@ body {
     margin-right: auto !important;
 }
 
+.border{
+    border-color: black solid 1px;
+    border-style: dotted;
+    width: 550px;
+    height: 200px;
+}
+
 .centrer{
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.centrerContent{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.centrerCanvas{
+    margin-left: 370px;
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+}
+
+.borderCanvas{
+    border:solid black 1px;
 }
 
 .topnav {
