@@ -6,7 +6,7 @@
 
 function getMyPosition(position) {
     var infoPos = "<strong>Position actuelle: </strong><br><br>";
-    infoPos += "<strong>Latitude: </strong>Latitude: " + position.coords.latitude + "<br>";
+    infoPos += "<strong>Latitude: </strong>" + position.coords.latitude + "<br>";
     infoPos += "<strong>Longitude: </strong>" + position.coords.longitude + "<br>";
     infoPos += "<strong>Altitude: </strong>" + position.coords.altitude + "<br>";
     infoPos += "<strong>Vitesse : </strong>"+ position.coords.speed + "<br>";
