@@ -20,23 +20,21 @@ if (navigator.geolocation) {
 } else {
     "<h2>La géolocalisation n'est pas possible</h2>";
 }
-
+//var getPos = navigator.geolocation.getCurrentPosition(getMyPosition);
 var watchId = navigator.geolocation.watchPosition(watchMyPosition);
-navigator.geolocation.clearWatch(watchId);
+//navigator.geolocation.clearWatch(watchId);
 
 
 /** affichage carte avec marqueur */
 
 // On initialise la latitude et la longitude
 var lat = 43.6877383;
-var lon = 7.211371;
+var long = 7.211371;
 //var coords = navigator.geolocation.getCurrentPosition(getMyPosition);
 var maCarte = null;
 
-// initialisation de la carte
 function initMap() {
-    //Création objet "maCarte" et insère dans l'élément HTML qui a l'ID "map"
-    maCarte = L.map('map').setView([lat, lon], 11);
+    maCarte = L.map('map').setView([lat, long], 11);
     //Leaflet ne récupère pas les cartes sur un serveur par défaut, on doit lui dire où on veut les récupérer -> openstreetmap.fr
     L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
             //lien vers la source des données
@@ -45,7 +43,7 @@ function initMap() {
             maxZoom: 20
         }).addTo(maCarte);
         //marqueur
-        var marker = L.marker([lat, lon]).addTo(maCarte);
+        var marker = L.marker([lat, long]).addTo(maCarte);
     }
     window.onload = function(){
     initMap(); 
