@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/exo2.css" />
 </head>
-<body>
+<body onload="animate()">
     <header>
         <div class="topnav">
             <a href="../index.html">Accueil</a>
@@ -16,8 +16,31 @@
         </div>
     </header>
     <h1 class="centrer">exo 2</h1>
-    <div class="centrerContent">
-    </div>
+    <script src="../js/three.js"></script>
     <script type="text/javascript" src="../js/exo2.js"></script>
+    <!--<script>const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshBasicMaterial({
+            color: 0x00ff00
+        });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+        
+        camera.position.z = 5;
+        
+        const animate = function () {
+            requestAnimationFrame(animate);
+        
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+        
+            renderer.render(scene, camera);
+        };</script>--<
 </body>
 </html>
