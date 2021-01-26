@@ -30,6 +30,7 @@ const formB = new THREE.SphereGeometry();
 const materialB = new THREE.MeshBasicMaterial({
     color: 0x00ffff
 });
+materialB.map = THREE.ImageUtils.loadTexture("../img/prairie-humide.jpg");
 const sphere = new THREE.Mesh(formB, materialB);
 scene.add(sphere);
 
@@ -46,8 +47,8 @@ const animate = function () {
     cube.rotation.y += 0.01;
 
     //on anime la forme, ici le cube
-    sphere.rotation.x += 0.01;
-    sphere.rotation.y += 0.01;
+    sphere.rotation.x += 0.02;
+    sphere.rotation.y += 0.02;
 
     renderer.render(scene, camera); //affiche la scène
 };
