@@ -1,0 +1,19 @@
+//on crée une forme, ici un cube. Ts les sommets et faces sont déjà créé
+const formA = new THREE.BoxGeometry();
+// pr colorer la forme, on utilise un matériau, ici MeshBasicMaterial ms il en existe d'autre
+const materialA = new THREE.MeshBasicMaterial({
+    color: 0x00ff00 //on lui attribut une couleur, de la mm manière qu'en css
+});
+// on a aussi besoin d'un maillage 
+//=> objet qui prend une géométrie et lui applique un matériau, que nous pouvons ensuite insérer dans notre scène et se déplacer librement
+const cube = new THREE.Mesh(formA, materialA);
+scene.add(cube); 
+/*Par défaut, lorsque nous appelons scene.add (), la chose que nous ajoutons sera ajoutée aux coordonnées (0,0,0)
+mais ca entraîne à la fois la caméra et le cube l'un à l'intérieur de l'autre. 
+Pour éviter cela, on déplace un peu la caméra vers l'extérieur*/
+
+camera.position.z = 5;
+
+    //on anime la forme, ici le cube
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;

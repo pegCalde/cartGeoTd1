@@ -25,21 +25,15 @@ scene.add(cube);
 mais ca entraîne à la fois la caméra et le cube l'un à l'intérieur de l'autre. 
 Pour éviter cela, on déplace un peu la caméra vers l'extérieur*/
 
-camera.position.z = 5;
-
 /*SPHERE*/
-const formB = new THREE.SphereGeometry( 60, 24, 16 );
+const formB = new THREE.SphereGeometry();
 const materialB = new THREE.MeshBasicMaterial({
-    color: 0x00fd05
+    color: 0x00ffff
 });
 const sphere = new THREE.Mesh(formB, materialB);
 scene.add(sphere);
 
-var loader = new THREE.TextureLoader();
-var texture = loader.load("../img/prairie-humide.jpg");
-map: texture;
-
-
+camera.position.z = 5;
 
 /*RENDRE LA SCENE*/
 const animate = function () {
@@ -50,6 +44,10 @@ const animate = function () {
     //on anime la forme, ici le cube
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
+
+    //on anime la forme, ici le cube
+    sphere.rotation.x += 0.01;
+    sphere.rotation.y += 0.01;
 
     renderer.render(scene, camera); //affiche la scène
 };
